@@ -1,13 +1,13 @@
 import React from 'react'
 
-const DoneTask = ({task}) => {
+const DoneTask = ({title, description}) => {
   return (
     <div className='doneTask'>
         <div className="taskHeader">
-            <p>{task.title}</p>
+            <p>{title}</p>
         </div>
         <hr/>
-        <p>{task.description}</p>
+        <p>{description}</p>
     </div>
   )
 }

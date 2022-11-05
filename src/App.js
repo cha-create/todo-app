@@ -7,25 +7,22 @@ import './App.css';
 const App = () => {
     const [todos, setTodos] = useState([]);
     const [doneTodos, setDoneTodos] = useState([]);
-    const moveTask = (id) => {
-        let qualifyingTodos = [];
-        let movingTodos = [];
-        todos.forEach((someTodos) => {if(someTodos.id === id) {movingTodos.push(someTodos)}});
-        todos.forEach((todo) => {if(todo.id !== id) {qualifyingTodos.push(todo)}});
-        setDoneTodos(doneTodos.concat(movingTodos));
-        console.log(movingTodos);
+    const moveTask = (id) => { 
+        const taskToMove = todos.find((todo) => todo.id === id); 
+        const qualifyingTodos = todos.filter((todo) => todo.id !== id);
+        setDoneTodos((prevDoneTodos) => [...prevDoneTodos, taskToMove]);
         setTodos(qualifyingTodos);
-
-    } 
-    const addTask = () => {
-        let taskTitle = document.getElementById('nameInputField').value;
-        let taskDescription = document.getElementById('descriptionInputField').value;
-        setTodos(todos.concat({
-            id: uuid(),
-            title: taskTitle,
-            description: taskDescription
-        }))
-    }
+        console.log(doneTodos); 
+      };
+    const addTask = () => { 
+        const newTodo = { 
+            id: uuid(), 
+            title: document.getElementById('nameInputField').value,
+            description: document.getElementById('descriptionInputField').value, }; 
+            setTodos((prevTodos) => { 
+            return [...prevTodos, newTodo]; 
+    }); 
+    };
     return (
         <div className='container'>
             <ToDo addTask={addTask} moveTask={moveTask} todos={todos}/>
