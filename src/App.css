@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10%;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ToDo {
+    width: 15%;
+    border: 1px solid gray;
+    border-radius: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-left: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.addTaskButton {
+    margin-left: 14%;
+    border: none;
+    border-radius: 5px;
+    width: 50%;
+    background-color: aqua;
+    margin-bottom: 10px;
+    padding: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.addTaskButton:active {
+    background-color: rgb(88, 185, 185);
 }
 
-.App-link {
-  color: #61dafb;
+.noTasks {
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 90%;
+    padding: 5px;
+    background-color: lightgray;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task {
+    border: 1px solid gray;
+    width: 90%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    padding-top: 0px;
+    background-color: lightgray;
+}
+
+.ToDo h3 {
+    margin-left: 40%;
+}
+
+.taskHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.taskMoveButton {
+    padding: 5px;
+    margin: 10px;
+    border: none;
+    background-color: rgb(255, 62, 62);
+    border-radius: 5px;
+    
+}
+
+.todoAddTask {
+    background-color: lightgray;
+    border: 2px solid gray;
+    border-radius: 15px;
+    padding-left: 17%;
+    margin-right: 11px;
+}
+
+.todoAddTask h4 {
+    margin: 5px;
+    margin-left: 50px;
+}
+
+.todoAddTask input {
+    margin-bottom: 10px;
+}
+
+.tasksDone {
+    border: 1px solid gray;
+    margin-left: 25px;
+    border-radius: 15px;
+    width: 15%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.tasksDone h3 {
+    margin-left: 33%;
+}
+
+.clearFinishedTasks {
+    margin-left: 27%;
+    border: none;
+    background-color: aqua;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 5px;
+    
 }
